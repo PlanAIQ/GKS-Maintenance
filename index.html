@@ -292,7 +292,7 @@
   }
   .hero-h1 .wordmark .g { background-image: linear-gradient(165deg,#b9bdc3 0%,#4c4f55 12%,#1c1e22 32%,#050506 54%,#141518 78%,#4a4d53 100%); }
   .hero-h1 .wordmark .k { background-image: linear-gradient(165deg,#ff5257 0%,#e21f26 50%,#a81319 100%); }
-  .hero-h1 .wordmark .s { background-image: linear-gradient(165deg,#ffffff 0%,#dfe2e7 28%,#9aa0a8 62%,#f2f4f7 100%); }
+  .hero-h1 .wordmark .s { background-image: linear-gradient(165deg,#eef0f2 0%,#c7cbd0 16%,#8a9096 34%,#4a4d53 52%,#2c2f34 66%,#8a9096 82%,#dde0e3 100%); }
   .hero-logo {
     margin-bottom: 28px;
     animation: fadeUp 0.8s ease both;
@@ -662,6 +662,7 @@
     background: var(--black);
     overflow: hidden; position: relative;
   }
+  #testimonials .section-title { color: var(--white); }
   .testimonials-note {
     color: var(--gray-light); font-size: 0.85rem; margin-top: -40px; margin-bottom: 44px; max-width: 520px; line-height: 1.7;
   }
@@ -670,16 +671,16 @@
   }
   .testimonial {
     background: linear-gradient(165deg, var(--charcoal-2), var(--charcoal));
-    border: 1px solid rgba(226,31,38,0.25);
-    border-left: 4px solid var(--red);
+    border: 1px solid rgba(226,31,38,0.16);
+    border-left: 3px solid rgba(226,31,38,0.7);
     padding: 36px 40px; flex: 1 1 320px; max-width: 360px;
     position: relative; overflow: hidden;
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-    box-shadow: 0 14px 34px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.3);
     transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     transform-style: preserve-3d; will-change: transform;
   }
-  .testimonial:hover { border-color: rgba(226,31,38,0.6); transform: translateY(-6px); box-shadow: 0 20px 44px rgba(0,0,0,0.5); }
+  .testimonial:hover { border-color: rgba(226,31,38,0.4); transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,0.4); }
   .testimonial::before {
     content: '"';
     position: absolute; top: 0px; right: 24px;
@@ -693,7 +694,7 @@
     opacity: 0; transition: opacity 0.35s; pointer-events: none;
   }
   .testimonial:hover::after { opacity: 1; }
-  .stars { color: var(--red); font-size: 1.05rem; margin-bottom: 18px; letter-spacing: 3px; text-shadow: 0 0 14px rgba(226,31,38,0.5); }
+  .stars { color: var(--red); font-size: 1.05rem; margin-bottom: 18px; letter-spacing: 3px; }
   .testimonial-text {
     font-size: 1.02rem; font-weight: 500; color: var(--white);
     line-height: 1.75; margin-bottom: 26px; font-style: normal;
@@ -705,11 +706,11 @@
   .testimonial-avatar {
     width: 48px; height: 48px; border-radius: 50%;
     background: linear-gradient(135deg, var(--red), var(--red-dark));
-    border: 2px solid rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.12);
     color: var(--white); font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 14px;
-    box-shadow: 0 6px 16px rgba(226,31,38,0.35);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
   }
 
   /* CTA */
