@@ -93,6 +93,13 @@
   }
   .logo { display: inline-flex; align-items: center; text-decoration: none; line-height: 1; }
   .logo span { color: var(--red); }
+  .logo-img {
+    display: block; height: 58px; width: auto;
+    filter: drop-shadow(0 0 1px rgba(255,255,255,0.35)) drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+    transition: transform 0.3s;
+  }
+  .logo:hover .logo-img { transform: scale(1.03); }
+  .footer-brand .footer-logo-img { height: 88px; }
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a {
     color: var(--gray-light); text-decoration: none; font-size: 0.85rem;
@@ -783,7 +790,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" height="38" role="img" aria-label="GKS Maintenance"><path d="M28 2 L50 9 L50 26 C50 41 40 49 28 53 C16 49 6 41 6 26 L6 9 Z" fill="#1a1a1a" stroke="#e21f26" stroke-width="2.2" stroke-linejoin="round"/><path d="M18 28 L24.5 35 L39 19" fill="none" stroke="#e21f26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><text x="64" y="36" font-family="Bebas Neue, Arial Black, sans-serif" font-size="34" letter-spacing="2" fill="#ffffff">GKS</text><text x="65" y="50" font-family="JetBrains Mono, Courier New, monospace" font-size="8" letter-spacing="3.5" fill="#e21f26">MAINTENANCE</text></svg></a>
+  <a href="index.html" class="logo"><img src="logo.png" alt="GKS Maintenance" class="logo-img"></a>
   <ul class="nav-links">
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#gallery">Gallery</a></li>
@@ -906,7 +913,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <a href="index.html" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" height="38" role="img" aria-label="GKS Maintenance"><path d="M28 2 L50 9 L50 26 C50 41 40 49 28 53 C16 49 6 41 6 26 L6 9 Z" fill="#1a1a1a" stroke="#e21f26" stroke-width="2.2" stroke-linejoin="round"/><path d="M18 28 L24.5 35 L39 19" fill="none" stroke="#e21f26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><text x="64" y="36" font-family="Bebas Neue, Arial Black, sans-serif" font-size="34" letter-spacing="2" fill="#ffffff">GKS</text><text x="65" y="50" font-family="JetBrains Mono, Courier New, monospace" font-size="8" letter-spacing="3.5" fill="#e21f26">MAINTENANCE</text></svg></a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="GKS Maintenance" class="logo-img footer-logo-img"></a>
     <p class="footer-tagline">Commercial cleaning &amp; maintenance services. Owned and operated by Shawn &amp; Laura Sharrow, serving St. Clair County.</p>
   </div>
   <div class="footer-links">

@@ -56,6 +56,13 @@
   }
   .logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.12em; color: var(--white); text-decoration: none; }
   .logo span { color: var(--red); }
+  .logo-img {
+    display: block; height: 58px; width: auto;
+    filter: drop-shadow(0 0 1px rgba(255,255,255,0.35)) drop-shadow(0 2px 8px rgba(0,0,0,0.45));
+    transition: transform 0.3s;
+  }
+  .logo:hover .logo-img { transform: scale(1.03); }
+  .footer-brand .footer-logo-img { height: 88px; }
   .nav-links { display: flex; gap: 40px; list-style: none; }
   .nav-links a {
     color: var(--gray-light); text-decoration: none; font-size: 0.85rem;
@@ -262,7 +269,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="logo">GKS<span>.</span></a>
+  <a href="index.html" class="logo"><img src="logo.png" alt="GKS Maintenance" class="logo-img"></a>
   <ul class="nav-links">
     <li><a href="index.html#services">Services</a></li>
     <li><a href="index.html#gallery">Gallery</a></li>
@@ -394,7 +401,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <a href="index.html" class="logo">GKS<span>.</span></a>
+    <a href="index.html" class="logo"><img src="logo.png" alt="GKS Maintenance" class="logo-img footer-logo-img"></a>
     <p class="footer-tagline">Commercial cleaning and maintenance services. Owned and operated by Shawn and Laura Sharrow, serving St. Clair County.</p>
   </div>
   <div class="footer-links">
