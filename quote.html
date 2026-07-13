@@ -185,6 +185,7 @@
     padding-right: 42px;
   }
   .field select option { background: var(--charcoal-2); }
+  .field input[type="date"] { color-scheme: dark; }
 
   /* Service checkboxes */
   .service-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -349,6 +350,10 @@
             <input type="checkbox" name="service" value="Residential Clean Out">
             <span>📦 Residential Clean Out</span>
           </label>
+          <label class="check-pill">
+            <input type="checkbox" name="service" value="Other">
+            <span>✨ Other</span>
+          </label>
         </div>
         <span class="error-msg" id="serviceError">Please select at least one service.</span>
       </div>
@@ -374,7 +379,12 @@
           <option>Within a week</option>
           <option>Within a month</option>
           <option>Just exploring options</option>
+          <option value="Specific Date">Pick a specific date</option>
         </select>
+      </div>
+      <div class="field" id="specificDateField" style="display:none;">
+        <label for="specificDate">Select Date</label>
+        <input type="date" id="specificDate" name="specificDate">
       </div>
 
       <div class="field full">
@@ -465,6 +475,13 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeM
 const form = document.getElementById('quoteForm');
 const submitBtn = document.getElementById('submitBtn');
 
+// Toggle the specific-date calendar picker
+const timelineSelect = document.getElementById('timeline');
+const specificDateField = document.getElementById('specificDateField');
+timelineSelect.addEventListener('change', () => {
+  specificDateField.style.display = timelineSelect.value === 'Specific Date' ? 'block' : 'none';
+});
+
 function setFieldValid(fieldEl, isValid) {
   fieldEl.classList.toggle('invalid', !isValid);
 }
@@ -515,6 +532,11 @@ form.addEventListener('submit', function (e) {
   // a Google Sheet via Apps Script, or your own backend/CRM — so leads actually reach you.
   const formData = new FormData(form);
   const services = formData.getAll('service');
+  let timelineValue = formData.get('timeline');
+  if (timelineValue === 'Specific Date' && formData.get('specificDate')) {
+    const picked = new Date(formData.get('specificDate') + 'T00:00:00');
+    timelineValue = 'Specific date: ' + picked.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  }
   const data = {
     firstName: formData.get('firstName'),
     lastName: formData.get('lastName'),
@@ -522,7 +544,7 @@ form.addEventListener('submit', function (e) {
     email: formData.get('email'),
     services: services,
     propertyType: formData.get('propertyType'),
-    timeline: formData.get('timeline'),
+    timeline: timelineValue,
     address: formData.get('address'),
     details: formData.get('details'),
     submittedAt: new Date().toISOString()
