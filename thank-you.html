@@ -50,6 +50,13 @@
     transition: transform 0.3s;
   }
   .logo:hover .logo-img { transform: scale(1.03); }
+  .nav-left { display: flex; align-items: center; gap: 28px; }
+  .nav-home-link {
+    color: var(--gray-light); text-decoration: none; font-size: 0.85rem;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500;
+    transition: color 0.3s;
+  }
+  .nav-home-link:hover { color: var(--red); }
   .nav-cta {
     background: var(--red); color: var(--white); border: none; padding: 10px 26px;
     font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
@@ -166,7 +173,10 @@
 <body>
 
 <nav id="top">
-  <a href="index.html" class="logo"><img src="logo.png" alt="GKS Maintenance" class="logo-img"></a>
+  <div class="nav-left">
+    <a href="index.html" class="logo"><img src="logo.png" alt="GKS Maintenance" class="logo-img"></a>
+    <a href="index.html" class="nav-home-link">Home</a>
+  </div>
   <a href="tel:+18109414357" class="nav-cta" id="navPhone">810.941.4357</a>
 </nav>
 
